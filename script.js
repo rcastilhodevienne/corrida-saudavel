@@ -8,7 +8,6 @@ canvas.height = window.innerHeight;
 let jogando = false;
 let tempoRestante = 180; // 3 minutos
 let pontos = 0;
-let loopJogo;
 let timerJogo;
 let emojiBase = '👦';
 
@@ -99,7 +98,7 @@ function loop() {
     // Física e Lógica
     atualizarJogador();
     spawnItem();
-    atualizarE DesenharItens();
+    atualizarEDesenharItens(); // O ERRO ESTAVA AQUI (tinha um espaço)
     desenharJogador();
 
     // Pede o próximo frame
@@ -154,7 +153,7 @@ function desenharJogador() {
     ctx.restore();
 }
 
-function atualizarE DesenharItens() {
+function atualizarEDesenharItens() { // E AQUI (corrigido para ficar tudo junto)
     for (let i = itens.length - 1; i >= 0; i--) {
         let item = itens[i];
         
