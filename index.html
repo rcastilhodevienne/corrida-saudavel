@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Corrida Saudável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ecrã Inicial -->
+    <div id="tela-inicial" class="overlay">
+        <div class="card">
+            <h1>🏃‍♂️ Corrida Saudável 🏃‍♀️</h1>
+            <p>Coma alimentos saudáveis para ficar rápido, bonito e somar pontos! Se comer besteiras, você zera os pontos, engorda, fica lento e pode adoecer.</p>
+            <p><strong>Tempo: 3 Minutos</strong></p>
+            
+            <h3>Escolha seu personagem:</h3>
+            <div class="escolha-personagem">
+                <button class="btn-personagem" onclick="iniciarJogo('👦')">👦 Menino</button>
+                <button class="btn-personagem" onclick="iniciarJogo('👧')">👧 Menina</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HUD do Jogo -->
+    <div id="hud" class="escondido">
+        <div class="status-bar">
+            <div class="box">Pontos: <span id="pontos">0</span></div>
+            <div class="box">Tempo: <span id="tempo">03:00</span></div>
+        </div>
+        <div class="saude-bar">
+            <span>Saúde/Agilidade:</span>
+            <div class="barra-fundo"><div id="barra-saude"></div></div>
+        </div>
+    </div>
+
+    <!-- Canvas do Jogo -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Ecrã de Fim de Jogo -->
+    <div id="tela-fim" class="overlay escondido">
+        <div class="card">
+            <h1 id="titulo-fim">Fim de Jogo!</h1>
+            <p id="mensagem-fim"></p>
+            <h2>Pontuação Final: <span id="pontos-finais">0</span></h2>
+            <button class="btn-personagem" style="margin-top:20px;" onclick="location.reload()">Jogar Novamente 🔄</button>
+        </div>
+    </div>
+
+    <!-- Controlos Touch para Telemóvel -->
+    <div id="controles-touch" class="escondido">
+        <button id="btn-esquerda">⬅️</button>
+        <button id="btn-direita">➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
